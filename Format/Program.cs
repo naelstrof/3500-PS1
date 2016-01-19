@@ -36,7 +36,7 @@ namespace Format
             string input = "";
             string line;
             while ( ( line = Console.ReadLine() ) != null ) {
-                input += line;
+                input += line + '\n';
             }
             // Tokenize
             char[] delimiters = { ' ', '\t', '\n' };

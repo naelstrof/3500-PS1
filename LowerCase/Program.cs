@@ -36,10 +36,10 @@ namespace LowerCase {
             string line;
             while ( ( line = Console.ReadLine() ) != null) {
                 // input.Concat( line ); duuur
-                input += line;
+                input += line + '\n';
             }
             // Lowercase
-            input.ToLower();
+            input = input.ToLower();
             // Tokenize
             char[] delimiters = { ' ', '\t', '\n' };
             List<string> tokens = new List<string>( input.Split( delimiters ) );
