@@ -36,6 +36,9 @@ namespace Palindrome {
             }
             // Check for palindromes
             foreach ( string palindrome in input ) {
+                if ( palindrome.Length <= 0 ) {
+                    continue;
+                }
                 char[] foo = palindrome.ToCharArray();
                 Array.Reverse( foo );
                 // Why 'new string(foo)'? Because casting is hard in C# ok???

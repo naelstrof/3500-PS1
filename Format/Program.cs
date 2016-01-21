@@ -49,6 +49,10 @@ namespace Format
             // Print
             int m = 0;
             foreach ( string token in tokens ) {
+                // Gotta watch out for those double spaces
+                if ( token.Length <= 0 ) {
+                    continue;
+                }
                 Console.Write( token );
                 // This just in, someone just used the PRE-increment operator!
                 // Students everywhere are baffled.

@@ -51,7 +51,9 @@ namespace LowerCase {
             List<string> tokens = new List<string>( input.Split( delimiters ) );
             // Print
             foreach ( string token in tokens ) {
-                Console.WriteLine( token );
+                if ( token.Length > 0 ) { // To handle double spaces or whatever
+                    Console.WriteLine( token );
+                }
             }
             // Done!
 		}
