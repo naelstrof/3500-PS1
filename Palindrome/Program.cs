@@ -39,7 +39,7 @@ namespace Palindrome {
                 char[] foo = palindrome.ToCharArray();
                 Array.Reverse( foo );
                 // Why 'new string(foo)'? Because casting is hard in C# ok???
-                // .ToString() didn't work, maybe it's unimplemented in mono lmao
+                // .ToString() didn't work, maybe it's unimplemented in mono i donno lmao
                 if ( String.Compare( new string(foo), palindrome ) == 0 ) {
                     // Print
                     Console.WriteLine( palindrome );

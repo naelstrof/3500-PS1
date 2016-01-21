@@ -24,17 +24,22 @@ namespace Format
 {
     /// <summary>
     /// It uh, takes a single argument integer n that it uses to print the input stream's
-    /// tokens. It prints them n-tokens at a time. n defaults to 1 if unspecified.
+    /// tokens. It prints them n-tokens at a time per line. n defaults to 1 if unspecified.
     /// </summary>
 	class MainClass {
 		public static void Main (string[] args) {
             int n = 1;
             if ( args.Length == 1 ) {
                 n = Int32.Parse( args[0] );
+            // Don't trust anyone
+            } else if ( args.Length != 0 ) {
+                throw new System.ArgumentException( "There can only be one!" );
             }
             // Read stdin
             string input = "";
             string line;
+            // Stream operations shmeme operations
+            // We'll just save the whole thing to memory ;)
             while ( ( line = Console.ReadLine() ) != null ) {
                 input += line + '\n';
             }
@@ -45,6 +50,8 @@ namespace Format
             int m = 0;
             foreach ( string token in tokens ) {
                 Console.Write( token );
+                // This just in, someone just used the PRE-increment operator!
+                // Students everywhere are baffled.
                 if ( ++m >= n ) {
                     Console.WriteLine();
                     m = 0;
@@ -53,6 +60,10 @@ namespace Format
                     Console.Write( " " );
                 }
             }
+            // FIXME: It prints an unecessary space if we run out of tokens to print.
+            // Imagine it being implemented in a space station AI and it causes
+            // it to gasp for breathe at the end of every sentence thinking there's another
+            // word. 
             if ( m != 0 ) {
                 Console.WriteLine();
             }

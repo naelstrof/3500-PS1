@@ -34,12 +34,18 @@ namespace LowerCase {
             // Read stdin
             string input = "";
             string line;
+            // Stream operations shmeme operations
+            // We'll just save the whole thing to memory ;)
             while ( ( line = Console.ReadLine() ) != null) {
                 // input.Concat( line ); duuur
                 input += line + '\n';
             }
             // Lowercase
             input = input.ToLower();
+
+            // Wow did I just save it TWICE to memory? Heavens-to-Betsy this would be
+            // really bad if we had streams larger than a billion characters.
+
             // Tokenize
             char[] delimiters = { ' ', '\t', '\n' };
             List<string> tokens = new List<string>( input.Split( delimiters ) );
